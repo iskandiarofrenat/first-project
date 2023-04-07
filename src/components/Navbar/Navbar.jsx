@@ -6,10 +6,10 @@ console.log(s);
 //   'nav' : 'Navbar_nav__DS0RX',
 //   'item' : 'Navbar_item__Ccd2B',
 // }
-let c1 = "item";
-let c2 = "active";
-let classes = c1 + " " + c2;
-let classesNew = `${s.item} ${s.active}`;
+// let c1 = "item";
+// let c2 = "active";
+// let classes = c1 + " " + c2;
+// let classesNew = `${s.item} ${s.active}`;
 
 const Navbar = () => {
     return <nav className={s.nav}>
