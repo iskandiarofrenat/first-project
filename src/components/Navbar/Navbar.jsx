@@ -5,9 +5,10 @@ import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
-    return <nav className={s.nav}>
+    return (
+    <nav className={s.nav}>
     <div className={s.item}>
-      <NavLink to = "/profile">Profile</NavLink>
+      <NavLink to = "/profile" >Profile</NavLink>
     </div>
     <div className={`${s.item} ${s.active}`}>
       <NavLink to = "/dialogs">Messages</NavLink>
@@ -21,8 +22,8 @@ const Navbar = () => {
     <div className={s.item}>
       <NavLink to = "settings">Settings</NavLink> 
     </div>
-    
-  </nav>
+    </nav>
+  ) 
 }
 
 export default Navbar;
