@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const DialogItem = (props) => {
 
-    let path = "/dialogs/*" + props.id;
+    let path = "/dialogs/" + props.id;
     return (
         <div className={s.dialog + ' ' + s.active}>
         <NavLink to={path}>{props.name}</NavLink>
@@ -18,30 +18,45 @@ const Message = (props) => {
     )
 }
 
+let dialogs = [
+    {id: 1, name: 'Наташа'},
+    {id: 2, name: 'Кирилл'},
+    {id: 3, name: 'Дмитрий'},
+    {id: 4, name: 'Леха '},
+    {id: 5, name: 'Влад'}
+
+]
+
+let messages = [
+    {id: 1, message: 'Привет'},
+    {id: 2, message: 'Как дела'},
+    {id: 3, message: 'Чем занимаешься'},
+    {id: 4, message: 'Пошли пить пиво '},
+    {id: 5, message: 'С Днем рождения'}
+
+]
+
+let dialogsElements = dialogs.map (dialog => <DialogItem name={dialog.name} id= {dialog.id}/>);
+let messagesElements = messages.map (message => <Message message = {message.message}/>);
+
 const Dialogs =(props) => {
            return (
     <div className={s.dialogs}>
         <div className={s.dialogsItems}>
-            <DialogItem name="Наташа" id="1"/>
-            <DialogItem name="Кирилл" id="2"/>
-            <DialogItem name="Дмитрий" id="3"/>
-            <DialogItem name="Леха" id="4"/>
-            <DialogItem name="Влад" id="5"/>
-        </div>
- 
-        <div className={s.messages}>
-            <Message message ="Привет"/>
-            <Message message ="Как дела"/>
-            <Message message ="Чем занимаешься"/>
-            <Message message ="Пошли пить пиво"/>
-            <Message message ="S Днем рождения"/>
+            {dialogsElements}
+           
+            </div>
             
-
+        <div className={s.messages}>
+            {messagesElements}
+           
+            
         </div>
     </div>
+   )
    
-
-)
 } 
+
+
 
 export default Dialogs;
